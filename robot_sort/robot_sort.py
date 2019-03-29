@@ -102,26 +102,26 @@ class SortingRobot:
         Sort the robot's list.
         """
 
-        print(f"before while", self.light_is_on()) # False
-        print(f"holding", self._item)
+        #print(f"before while", self.light_is_on()) # False
+        #print(f"holding", self._item)
         # remember robot light starts off
         while self.light_is_on() is False:  # as long as light is off
-            print("while 1 light on?", self.light_is_on())
+            #print("while 1 light on?", self.light_is_on())
             self.set_light_on() # flip light on, then
             
             while self.can_move_right(): # while can move right, do these executions
-                print(f"while 2", self.can_move_right())
+                #print(f"while 2", self.can_move_right())
                 self.swap_item()
                 self.move_right()
-                print(f"is light on?", self.light_is_on())
+                #print(f"is light on?", self.light_is_on())
 
                 if self.compare_item() == 1: # if robot number greater, do this
-                    print(f"if > holding: ", self._item)
+                    #print(f"if > holding: ", self._item)
                     self.swap_item()
-                    print(f"if > swap 1: ", self._item)
+                    #print(f"if > swap 1: ", self._item)
                     self.move_left()
                     self.swap_item()
-                    print(f"if > swap 2: ", self._item)
+                    #print(f"if > swap 2: ", self._item)
                     self.move_right()
 
                     self.set_light_off() # flip the light off
@@ -133,17 +133,17 @@ class SortingRobot:
                     # goes to while1, doesn't execute because lightison == True, not False, which ends while1
             
                 if self.compare_item() == -1 or 0: # if robot number less than, do this 
-                    print(f"if < holding: ", self._item)
+                    #print(f"if < holding: ", self._item)
                     self.move_left()
                     self.swap_item()
-                    print(f"if < swap: ", self._item)
+                    #print(f"if < swap: ", self._item)
                     self.move_right()
 
                 if self.compare_item() == 0: # if robot number the same, do this
-                    print(f"if same holding: ", self._item)
+                    #print(f"if same holding: ", self._item)
                     self.move_left()
                     self.swap_item()
-                    print(f"if same swap: ", self._item)
+                    #print(f"if same swap: ", self._item)
                     self.move_right()
             
             # moves robot back back to the beginning of array
